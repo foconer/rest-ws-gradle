@@ -1,0 +1,53 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        jcenter()
+        maven { url 'https://plugins.gradle.org/m2/'}
+    }
+
+    dependencies {
+        classpath "io.spring.gradle:dependency-management-plugin:1.0.5.RELEASE"
+        classpath 'net.researchgate:gradle-release:2.6.0'
+    }
+}
+
+allprojects {
+  group = 'my.project'
+  version = '0.0.1-SNAPSHOT'
+}
+
+subprojects {
+    apply plugin: "java"
+    apply plugin: "maven"
+    apply plugin: "groovy"
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'net.researchgate.release'
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    repositories {
+        mavenLocal()
+        jcenter()
+        maven { url "https://repo.spring.io/release" }
+        maven { url "https://repo.spring.io/milestone" }
+        maven { url "https://repo.spring.io/snapshot" }
+        maven { url 'https://plugins.gradle.org/m2/'}
+    }
+
+    dependencyManagement {
+        dependencies {
+            dependency 'org.projectlombok:lombok:1.16.20'
+        }
+    }
+
+//    release {
+//        failOnCommitNeeded = false
+//        failOnPublishNeeded = false
+//        failOnUnversionedFiles = false
+//        failOnUpdateNeeded = false
+//        scmAdapters = [ net.researchgate.release.GitAdapter ]
+//
+//        buildTasks = ['clean', 'build']
+//        tagTemplate = "${name}-${version}"
+//    }
+}

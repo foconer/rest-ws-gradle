@@ -13,7 +13,6 @@ buildscript {
 
 allprojects {
   group = 'my.project'
-  version = '0.0.1-SNAPSHOT'
 }
 
 subprojects {
@@ -40,14 +39,14 @@ subprojects {
         }
     }
 
-//    release {
-//        failOnCommitNeeded = false
-//        failOnPublishNeeded = false
-//        failOnUnversionedFiles = false
-//        failOnUpdateNeeded = false
-//        scmAdapters = [ net.researchgate.release.GitAdapter ]
-//
-//        buildTasks = ['clean', 'build']
-//        tagTemplate = "${name}-${version}"
-//    }
+    release {
+        failOnCommitNeeded = false
+        failOnPublishNeeded = false
+        failOnUnversionedFiles = false
+        failOnUpdateNeeded = false
+        scmAdapters = [ net.researchgate.release.GitAdapter ]
+
+        buildTasks = ['clean', 'build']
+        tagTemplate = '$name-$version'
+    }
 }

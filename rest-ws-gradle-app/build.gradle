@@ -13,6 +13,6 @@ release {
     failOnUpdateNeeded = false
     scmAdapters = [ net.researchgate.release.GitAdapter ]
 
-    buildTasks = ['clean', 'build']
+    buildTasks = []
     tagTemplate = '$name-$version'
 }

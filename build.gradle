@@ -51,8 +51,6 @@ subprojects {
         })
     }
 
-    //afterReleaseBuild.dependsOn(':rest-ws-gradle-module:publish',':rest-ws-gradle-app:publish')
-
     release {
         failOnCommitNeeded = false
         failOnPublishNeeded = false

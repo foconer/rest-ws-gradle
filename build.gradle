@@ -52,7 +52,6 @@ subprojects {
     }
 
     release {
-        versionPropertyFile = '../gradle.properties'
         failOnCommitNeeded = false
         failOnPublishNeeded = false
         failOnUnversionedFiles = false

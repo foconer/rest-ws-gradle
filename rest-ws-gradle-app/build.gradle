@@ -3,7 +3,7 @@ jar {
 }
 
 dependencies {
-    compile project(':rest-ws-gradle-model')
+    compile project(':rest-ws-gradle-service')
 }
 
 //release {

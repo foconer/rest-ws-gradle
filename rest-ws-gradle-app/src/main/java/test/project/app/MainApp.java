@@ -1,9 +1,9 @@
 package test.project.app;
 
-import test.project.model.User;
+import test.project.service.UserService;
 
 public class MainApp {
     public static void main(String... args) {
-        System.out.println(User.builder().build());
+        System.out.println(new UserService().getUser());
     }
 }

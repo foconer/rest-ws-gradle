@@ -1,3 +1,4 @@
 rootProject.name = 'rest-ws-gradle'
 include ':rest-ws-gradle-model'
+include ':rest-ws-gradle-service'
 include ':rest-ws-gradle-app'

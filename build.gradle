@@ -39,16 +39,20 @@ subprojects {
         }
     }
 
+    task release(overwrite: true) {
+
+    }
+
     afterReleaseBuild.dependsOn(':rest-ws-gradle-module:publish',':rest-ws-gradle-app:publish')
 
-//    release {
-//        failOnCommitNeeded = false
-//        failOnPublishNeeded = false
-//        failOnUnversionedFiles = false
-//        failOnUpdateNeeded = false
-//        scmAdapters = [ net.researchgate.release.GitAdapter ]
-//
-//        buildTasks = ['clean', 'build']
-//        tagTemplate = '$name-$version'
-//    }
+    release {
+        failOnCommitNeeded = false
+        failOnPublishNeeded = false
+        failOnUnversionedFiles = false
+        failOnUpdateNeeded = false
+        scmAdapters = [ net.researchgate.release.GitAdapter ]
+
+        buildTasks = ['clean', 'build']
+        tagTemplate = '$name-$version'
+    }
 }

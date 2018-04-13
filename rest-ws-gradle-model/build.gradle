@@ -2,13 +2,13 @@ dependencies {
     compile 'org.projectlombok:lombok'
 }
 
-release {
-    failOnCommitNeeded = false
-    failOnPublishNeeded = false
-    failOnUnversionedFiles = false
-    failOnUpdateNeeded = false
-    scmAdapters = [ net.researchgate.release.GitAdapter ]
-
-    buildTasks = ['clean', 'build']
-    tagTemplate = '$name-$version'
-}
+//release {
+//    failOnCommitNeeded = false
+//    failOnPublishNeeded = false
+//    failOnUnversionedFiles = false
+//    failOnUpdateNeeded = false
+//    scmAdapters = [ net.researchgate.release.GitAdapter ]
+//
+//    buildTasks = ['clean', 'build']
+//    tagTemplate = '$name-$version'
+//}

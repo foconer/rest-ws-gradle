@@ -39,10 +39,6 @@ subprojects {
         }
     }
 
-    task release(overwrite: true) {
-
-    }
-
     afterReleaseBuild.dependsOn(':rest-ws-gradle-module:publish',':rest-ws-gradle-app:publish')
 
 //    release {

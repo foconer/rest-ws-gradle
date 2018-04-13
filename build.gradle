@@ -39,17 +39,17 @@ subprojects {
         }
     }
 
-//    project.afterEvaluate {
-//        project.configurations.compile.dependencies
-//                .findAll({ it instanceof ProjectDependency })
-//                .each({ d ->
-//            ProjectDependency p = d as ProjectDependency
-//            project.tasks.release.tasks.each { String t ->
-//                t = t.substring(t.lastIndexOf(Project.PATH_SEPARATOR) + 1)
-//                project.tasks.getByName(t).dependsOn p.dependencyProject.tasks.getByName(t)
-//            }
-//        })
-//    }
+    project.afterEvaluate {
+        project.configurations.compile.dependencies
+                .findAll({ it instanceof ProjectDependency })
+                .each({ d ->
+            ProjectDependency p = d as ProjectDependency
+            project.tasks.release.tasks.each { String t ->
+                t = t.substring(t.lastIndexOf(Project.PATH_SEPARATOR) + 1)
+                project.tasks.getByName(t).dependsOn p.dependencyProject.tasks.getByName(t)
+            }
+        })
+    }
 
     release {
         versionPropertyFile = '../gradle.properties'
@@ -62,15 +62,4 @@ subprojects {
         buildTasks = ['build']
         tagTemplate = '$name-$version'
     }
-
-//    task releaseBuild {
-//        dependsOn(
-//                'subproject-a:clean',
-//                'subproject-a:build',
-//                'subproject-a:publish',
-//                'subproject-b:clean',
-//                'subproject-b:build',
-//                'subproject-b:publish'
-//        )
-//    }
 }

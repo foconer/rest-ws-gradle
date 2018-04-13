@@ -39,6 +39,14 @@ subprojects {
         }
     }
 
+    /**
+     * This is a workaround because this research gate release plugin does not support
+     * multi-project sibling dependency build order.
+     *
+     * Run release using "./gradlew :rest-ws-gradle-app:release -Prelease.useAutomaticVersion=true"
+     *
+     * Another work around is to structure the multi project as recommended by research gate.
+     */
     project.afterEvaluate {
         project.configurations.compile.dependencies
                 .findAll({ it instanceof ProjectDependency })

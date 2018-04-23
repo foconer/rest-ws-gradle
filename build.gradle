@@ -67,7 +67,7 @@ subprojects {
         failOnUpdateNeeded = false
         scmAdapters = [ net.researchgate.release.GitAdapter ]
 
-        buildTasks = ['clean', 'build']
+        buildTasks = ['clean', 'build', 'install']
         tagTemplate = '$name-$version'
     }
 }
